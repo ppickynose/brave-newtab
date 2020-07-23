@@ -1,8 +1,5 @@
 "use strict";
 
-const store = chrome.storage.sync;
-
-
 (function(){
 
 	let dom = document.getElementById("bgimg");
@@ -52,7 +49,6 @@ const store = chrome.storage.sync;
 class Init{
 
 	constructor() {
-		this.deviceDetails = null;
 		this.dateDetails = null;
 	}
 }

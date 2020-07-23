@@ -1,10 +1,8 @@
 {
 	"manifest_version": 2,
-  	"name": "Simple Blank Tab",
-    "description": "Blank Tab with informations",
-    "version": "0.0.0.1",
-    "permissions" : [
-        "storage"],
+  	"name": "Splash New Tab",
+    "description": "Splash New Tab with date",
+    "version": "1.0.0.0",
     "chrome_url_overrides" : {
         "newtab": "newpage.html"
     },
