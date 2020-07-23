@@ -21,7 +21,7 @@
 
   	function error(){
   		let dom = document.getElementById("bgimg");
-		dom.style.backgroundColor =  'grey';
+		dom.style.backgroundColor =  'WhiteSmoke';
   	}
 
 
