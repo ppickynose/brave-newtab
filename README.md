@@ -13,8 +13,8 @@ A simple new tab page replacement for Google Chrome.
 </ul>
 
 
-![Alt text](https://i.imgur.com/PqPvBFW.png "ScreenShot 1")
-![Alt text](https://i.imgur.com/qwviUeX.png "ScreenShot 2")
-![Alt text](https://i.imgur.com/a3jOtdj.png "ScreenShot 3")
+![Alt text](https://i.imgur.com/1RPIho0.jpg "ScreenShot 1")
+![Alt text](https://i.imgur.com/g5RSxzm.jpg "ScreenShot 2")
+![Alt text](https://i.imgur.com/hVpbswI.jpg "ScreenShot 3")
 
 <h3>#Feel free to Contribute<h3>
