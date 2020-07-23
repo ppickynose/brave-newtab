@@ -1,8 +1,7 @@
-# Chrome Newtab
-A simple new tab page replacement for Google Chrome.
 
+An awesome new tab page replacement
 
-<h3>Process to install in Google Chrome as extension : </h3>
+<h3>Process to install in Google Chrome / Brave as extension : </h3>
 <ul>
 <li> git clone https://github.com/fusionneur/chrome-newtab.git </li>
 <li> OR download from here: Code -> Download Zip and unzip it</li>
