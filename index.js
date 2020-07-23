@@ -6,7 +6,7 @@ const store = chrome.storage.sync;
 (function(){
 
 	let dom = document.getElementById("bgimg");
-  	dom.style.backgroundColor =  'grey';
+  	dom.style.backgroundColor =  'WhiteSmoke';
 	fetchImage();
 
   	function fetchImage(){

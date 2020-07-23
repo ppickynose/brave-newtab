@@ -4,11 +4,7 @@
     "description": "Blank Tab with informations",
     "version": "0.0.0.1",
     "permissions" : [
-    		"bookmarks",
-        "storage",
-        "sessions",
-        "tabs",
-        "chrome://favicon/"],
+        "storage"],
     "chrome_url_overrides" : {
         "newtab": "newpage.html"
     },
