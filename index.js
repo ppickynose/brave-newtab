@@ -7,26 +7,10 @@ const store = chrome.storage.sync;
 
 	let dom = document.getElementById("bgimg");
   	dom.style.backgroundColor =  'grey';
-// 	let rand =Math.random();
-// 	rand = (rand<0.5)?Math.floor(rand):Math.ceil(rand);
-
-
-// 	rand == 0 ? fetchVideo() : fetchImage();
 	fetchImage();
-//   	function fetchVideo(){
 
-// 		   fetch('http://sarojsubedi.info.np/services/randomvid.php')
-// 		  .then(resp => resp.json())
-// 		  .then((vid) => {
-// 		  		console.log(vid.src);
-// 		  		insertVideo(vid.src);
-// 		  })
-// 		   .catch(() => {
-// 		  		error();
-// 		  });
-//   	}
   	function fetchImage(){
-		   fetch('https://source.unsplash.com/random/1024x600')
+		   fetch('https://source.unsplash.com/random/1920x1080')
 		  .then(resp => resp)
 		  .then((imagelists) => {
 		  		let selectedImage = imagelists.url;
@@ -43,13 +27,6 @@ const store = chrome.storage.sync;
 		dom.style.backgroundColor =  'grey';
   	}
 
-  	function insertVideo(src){
-		var video = document.getElementById('myVideo');
-		var source = document.createElement('source');
-		source.setAttribute('src', src);
-		video.appendChild(source);
-		video.play();
-  	}
 
 })();
 
@@ -76,7 +53,6 @@ const store = chrome.storage.sync;
 class Init{
 
 	constructor() {
-		this.batteryconnectionDetails = null;
 		this.deviceDetails = null;
 		this.dateDetails = null;
 	}
@@ -92,19 +68,12 @@ class TabAction extends Init{
 			callback(res);
 		})
 	}
-	getbatteryconnectionDetails(){
-		let promise = insertconnectionDetails();
-		promise.then((res)=>{
-			this.batteryconnectionDetails = res;
-		});
-	}
 	setDateDetails(){
 		this.dateDetails= getdateDetails();
 	}
 }
 
 let tab = new TabAction;
-tab.getbatteryconnectionDetails();
 tab.getAllDeviceDetails((devices)=>{
 	insertDevicesinDom(devices);
 });
@@ -132,15 +101,7 @@ function insertDevicesinDom(devices){
 	}
 }
 
-async function insertconnectionDetails(){
 
- 	const date = new Date()
-   const battery = await navigator.getBattery()
-   const connection = navigator.onLine ? '~' + navigator.connection.downlink + ' Mbps ' : 'Offline '
-   const batteryHealth = (battery.level * 100).toFixed() + '% ' + (battery.charging ? 'Charging' : 'Battery');
-   document.getElementById('battery').innerHTML = `${connection} - ${batteryHealth}`;
-    return {connection:connection,battery:batteryHealth};
-}
 function getdateDetails(){
 
 	var today = new Date();
@@ -173,4 +134,3 @@ function timeTo12HrFormat(time)
     let formatted_time = `${time_part_array[0]}:${time_part_array[1]} <span class="am_pm">${ampm}<span>`;
     return formatted_time;
 }
-
