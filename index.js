@@ -41,7 +41,6 @@ const store = chrome.storage.sync;
             m = checkTime(today.getMinutes()),
             s = checkTime(today.getSeconds());
             let time = h+":"+m;
-            //time = timeTo12HrFormat(time);
         		document.getElementById('time').innerHTML = time;
         	 	setTimeout(function () {
             startTime()
@@ -62,43 +61,16 @@ class TabAction extends Init{
 	constructor(props) {
 	  super(props);
 	}
-	getAllDeviceDetails(callback){
-		chrome.sessions.getDevices((res)=>{
-			this.deviceDetails = res;
-			callback(res);
-		})
-	}
 	setDateDetails(){
 		this.dateDetails= getdateDetails();
 	}
 }
 
 let tab = new TabAction;
-tab.getAllDeviceDetails((devices)=>{
-	insertDevicesinDom(devices);
-});
 tab.setDateDetails();
 insertinDom();
 function insertinDom(){
 	document.getElementById('date').innerHTML = `${tab.dateDetails.day}, ${tab.dateDetails.month} ${tab.dateDetails.date}`;
-}
-function insertDevicesinDom(devices){
-	let format = "<span style='font-size: 2vh;padding: 8px;;text-shadow: 0 0 2px gray;'><strong style='font-size: 2vh;text-shadow: 0 0 2px gray;'>DEVICE</strong> > LINK<span>";
-	for(let i= 0; i < devices.length; i++){
-		let lastSession = devices[i].sessions;
-		if(lastSession.length > 0){
-
-			lastSession = lastSession[0];
-			let orgLink = lastSession.window['tabs'][0]['url'];
-			let sessionLink= orgLink.substring(0, 20);
-
-			sessionLink = `<a href="${orgLink}" target='_blank' rel='noopenner' style='color:white;text-decoration: none;'>${sessionLink}</a>`;
-
-			let domContent = format.replace("DEVICE",devices[i].deviceName);
-			domContent = domContent.replace("LINK",sessionLink);
-			document.getElementById('device').innerHTML += domContent;
-		}
-	}
 }
 
 
@@ -120,17 +92,3 @@ function getdateDetails(){
 
 }
 
-function timeTo12HrFormat(time)
-{
-
-    let time_part_array = time.split(":");
-    let ampm = 'AM';
-    if (time_part_array[0] >= 12) {
-        ampm = 'PM';
-    }
-    if (time_part_array[0] > 12) {
-        time_part_array[0] = time_part_array[0] - 12;
-    }
-    let formatted_time = `${time_part_array[0]}:${time_part_array[1]} <span class="am_pm">${ampm}<span>`;
-    return formatted_time;
-}
