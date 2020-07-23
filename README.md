@@ -1,7 +1,7 @@
 
-An awesome new tab page replacement
+An awesome new tab page replacement for Brave (and Google Chrome)
 
-<h3>Process to install in Google Chrome / Brave as extension : </h3>
+<h3>How to install the extension: </h3>
 <ul>
 <li> git clone https://github.com/fusionneur/chrome-newtab.git </li>
 <li> OR download from here: Code -> Download Zip and unzip it</li>
