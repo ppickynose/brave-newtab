@@ -9,7 +9,7 @@ A simple new tab page replacement for Google Chrome.
 <li> OR download from here: Code -> Download Zip and unzip it</li>
 <li>Copy this link  <strong>chrome://extensions/</strong> and paste in Chrome</li>
 <li>Enable Developer Mode and click <strong>Load unpacked extension</strong> button and upload the folder</li>
-<li>Done.</li>
+<li>Enjoy!</li>
 </ul>
 
 
