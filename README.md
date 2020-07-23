@@ -2,17 +2,10 @@
 A simple new tab page replacement for Google Chrome.
 
 
-** **NEW** **
-<br>
-Awesome videos in every new Tab
-<br>
-![Alt text](https://im2.ezgif.com/tmp/ezgif-2-9ca4c97b2527.gif "Screen  Shot 3")
-
-
 <h3>Process to install in Google Chrome as extension : </h3>
 <ul>
 <li> Open Terminal</li>
-<li> git clone https://github.com/kaissaroj/chrome-newtab.git </li>
+<li> git clone https://github.com/fusionneur/chrome-newtab.git </li>
 <li> OR just download from Download Zip Option </li>
 <li>Copy this link  <strong>chrome://extensions/</strong> and paste in Chrome</li>
 <li>Enable Developer Mode and click <strong>Load unpacked extension</strong> button and upload the folder</li>
