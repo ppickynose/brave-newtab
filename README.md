@@ -16,3 +16,5 @@ An awesome new tab page replacement for Brave (and Google Chrome)
 ![Alt text](https://i.imgur.com/hVpbswI.jpg "ScreenShot 3")
 
 <h3>#Feel free to Contribute<h3>
+
+Credits: https://github.com/kaissaroj/chrome-newtab
