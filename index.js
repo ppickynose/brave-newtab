@@ -8,28 +8,31 @@
 
     function fetchImage() {
         fetch('https://source.unsplash.com/random/1920x1080')
-        .then(resp => resp)
-        .then((imagelists) => {
-            let selectedImage = imagelists.url;
-            let dom = document.getElementById("bgimg");
-            dom.style.backgroundImage = `url(${selectedImage})`;
-            setTimeout(function () {
-                var img = new Image();
-                img.onload = function () {
-                    dom.style.backgroundImage = `url(${selectedImage})`;
-                };
-            }, 1.5);
+        .then(response => response)
+        .then((imageObj) => {
+
+            var propValue;
+            for (var propName in imageObj) {
+                propValue = imageObj[propName]
+                console.log(propName, ":", propValue);
+            }
+
+            var image = new Image(),
+            photoURL = imageObj.url;
+            console.log("photoURL: " + photoURL);
+            image.onload = function () {
+                dom.style.backgroundImage = `url(${photoURL})`;
+            };
+            image.src = photoURL;
         })
         .catch(() => {
             error();
         });
     }
-
     function error() {
         let dom = document.getElementById("bgimg");
         dom.style.backgroundColor = 'WhiteSmoke';
     }
-
 })();
 
 (function () {
