@@ -13,6 +13,12 @@
             let selectedImage = imagelists.url;
             let dom = document.getElementById("bgimg");
             dom.style.backgroundImage = `url(${selectedImage})`;
+            setTimeout(function () {
+                var img = new Image();
+                img.onload = function () {
+                    dom.style.backgroundImage = `url(${selectedImage})`;
+                };
+            }, 1.5);
         })
         .catch(() => {
             error();
