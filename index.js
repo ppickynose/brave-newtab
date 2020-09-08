@@ -98,6 +98,7 @@ function getdateDetails() {
 
 }
 
+
 /*
 $.get("https://api.ipify.org?format=jsonp", function (response) {
     console.log(response); //{ip: "<ip>"}
@@ -124,7 +125,7 @@ $.get("https://api.ipify.org?format=jsonp", function (response) {
             var humidity = response.main.humidity;
             //console.log(humidity);
 
-            console.log(feelTemp + "°C, " + weatherDescription + "..");
+            //console.log(feelTemp + "°C, " + weatherDescription + "..");
             document.getElementById('weather').innerHTML = `${feelTemp}°C, ${weatherDescription}...`;
 
             //{"coord":{"lon":<lon>,"lat":<lat>},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03n"}],"base":"stations","main":{"temp":292.77,"feels_like":294.58,"temp_min":291.15,"temp_max":294.26,"pressure":1018,"humidity":82},"visibility":10000,"wind":{"speed":0.5,"deg":0},"clouds":{"all":29},"dt":1599531594,"sys":{"type":1,"id":6911,"country":"<country>","sunrise":1599536809,"sunset":1599583197},"timezone":10800,"id":676742,"name":"<name>","cod":200}
