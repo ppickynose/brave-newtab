@@ -104,6 +104,7 @@ $.get("https://api.ipify.org?format=jsonp", function (response) {
     var ip = response.ip;
     //console.log(ip); //<ip>
 */
+	//$.get('https://ipapi.co/' + ip + '/latlong/', function (response) {
     $.get('https://ipapi.co/json', function (response) {
         //console.log(response);
 		var city = response.city;
