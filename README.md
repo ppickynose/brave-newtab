@@ -11,8 +11,8 @@ An awesome new tab page replacement for Brave (and Google Chrome)
 
 <h3>To update the extension: </h3>
 <ul>
-<li>fetch the changes (git fetch) </li>
-<li>pull changes (git pull)</li>
+<li>Fetch the changes (git fetch) </li>
+<li>Pull changes (git pull)</li>
 </ul>
 
 
