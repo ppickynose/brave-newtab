@@ -105,8 +105,18 @@ $.get("https://api.ipify.org?format=jsonp", function (response) {
         //console.log(latlong);
         $.get('http://api.openweathermap.org/data/2.5/weather?lat=' + latlong[0] + '&lon=' + latlong[1] + '&appid=7e4dd03efbd4c382e324241cd5ab52ec' + '&units=metric', function (response) {
             //console.log(response);
-			var realTemp = response.main.feels_like;
-			console.log(realTemp);
+			
+			var feelTemp = response.main.feels_like;
+			//console.log("feelTemp: " + feelTemp);
+			
+			var weatherDescription = response.weather[0].description;
+			//console.log(weatherDescription);
+			
+			var humidity = response.main.humidity;
+			//console.log(humidity);
+			
+			console.log(Math.round(feelTemp) + "°C, " + weatherDescription + "..");
+			
 			//{"coord":{"lon":<lon>,"lat":<lat>},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03n"}],"base":"stations","main":{"temp":292.77,"feels_like":294.58,"temp_min":291.15,"temp_max":294.26,"pressure":1018,"humidity":82},"visibility":10000,"wind":{"speed":0.5,"deg":0},"clouds":{"all":29},"dt":1599531594,"sys":{"type":1,"id":6911,"country":"<country>","sunrise":1599536809,"sunset":1599583197},"timezone":10800,"id":676742,"name":"<name>","cod":200}
         })
     })
