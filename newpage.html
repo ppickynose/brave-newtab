@@ -1,75 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="style.css">
 	<script src="jquery-3.5.1.min.js"></script>
-    <title>New Tab</title>
-	
-<style>
-body, html {
-    height: 100%;
-    margin: 0;
-}
-
-#bgimg {
-    height: 100%;
-}
-
-.position {
-    width: 100%;
-    position: absolute;
-    top: 75%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-
-.fade-in {
-  animation: fadeIn ease 2.5s;
-  -webkit-animation: fadeIn ease 2.5s;
-  -moz-animation: fadeIn ease 2.5s;
-  -o-animation: fadeIn ease 2.5s;
-  -ms-animation: fadeIn ease 2.5s;
-}
-@keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-@-moz-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-@-webkit-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-@-o-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-@-ms-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-</style>
-
+	<title>New Tab</title>
 </head>
+
 <body class="fade-in">
     <script defer src="index.js"></script>
 <div id="bgimg">
  <div class="position">
     <span style="font-size: 15vh;text-shadow: 0px 0px 20px grey;" id="time"></span><br>
-    <span style=" font-size: 4vh;text-shadow: 0px 0px 20px grey;" id="date"></span>
+    <span style="font-size: 4vh;text-shadow: 0px 0px 20px grey;" id="date"></span><br>
+	<span class="fade-in" style="font-size: 3vh;text-shadow: 0px 0px 20px grey;" id="weather"></span>
+	<!--<span class="fade-in" style="font-family:Verdana; font-style: italic; color: white; font-size: 4vh;text-shadow: 0px 0px 20px grey;" id="weather"></span>-->
   </div>
  </div>
 </body>
+
 </html>

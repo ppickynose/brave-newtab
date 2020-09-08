@@ -1,0 +1,62 @@
+body, html {
+    height: 100%;
+    margin: 0;
+
+/*  for compatibility
+	-moz-font-smoothing: antialiased;*/
+}
+
+#bgimg {
+    height: 100%;
+}
+
+.position {
+    width: 100%;
+    position: absolute;
+    top: 75%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+/* fade in animation*/
+
+.fade-in {
+  -webkit-animation: fadeIn ease-in 2s;
+  -webkit-animation-fill-mode: forwards;
+/* for compatibility
+  animation: fadeIn ease-in 2s;
+  -moz-animation: fadeIn ease-in 2s;
+  -o-animation: fadeIn ease-in 2s;
+  -ms-animation: fadeIn ease-in 2s;
+*/
+}
+
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:.9;}
+}
+
+/* for compatibility
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+*/
