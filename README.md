@@ -5,7 +5,7 @@ An awesome new tab page replacement for Brave (and Google Chrome)
 <ul>
 <li>clone this repository (git clone https://github.com/fusionneur/chrome-newtab.git or through gitHub for Desktop) </li>
 <li>Open <strong>brave://extensions/ OR chrome://extensions/</strong></li>
-<li>Enable Developer Mode and click <strong>Load unpacked extension</strong> button and upload the folder</li>
+<li>Enable Developer Mode, click <strong>Load unpacked extension</strong> button and upload the folder</li>
 <li>Enjoy!</li>
 </ul>
 
