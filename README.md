@@ -19,6 +19,7 @@ An awesome new tab page replacement for Brave (and Google Chrome)
 ![Alt text](https://i.imgur.com/1RPIho0.jpg "ScreenShot 1")
 ![Alt text](https://i.imgur.com/g5RSxzm.jpg "ScreenShot 2")
 ![Alt text](https://i.imgur.com/hVpbswI.jpg "ScreenShot 3")
+![Alt text](https://i.imgur.com/uVjW8eT.png "ScreenShot 4")
 
 <h3>#Feel free to Contribute<h3>
 
