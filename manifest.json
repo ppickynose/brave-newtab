@@ -1,13 +1,21 @@
 {
-	"manifest_version": 2,
-	"name": "Splash New Tab",
-	"description": "Splash New Tab with date",
-	"version": "1.0.0.0",
-	"chrome_url_overrides" : {
+    "manifest_version": 2,
+    "name": "Splash New Tab",
+    "description": "Splash New Tab with date",
+    "version": "1.0.0.0",
+    "chrome_url_overrides": {
         "newtab": "newpage.html"
-	},
-    	"background": {
-		"scripts":["background.js"],
-		"persistent": false
-	}
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [{
+            "matches": [
+                "https://api.ipify.org/*"
+            ],
+            "js": ["jquery-3.5.1.min.js"]
+        }
+    ],
+    "content_security_policy": "script-src 'self' https://api.ipify.org; object-src 'self'"
 }
