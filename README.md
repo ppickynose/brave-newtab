@@ -6,7 +6,7 @@ An awesome new tab page replacement for Brave (and Google Chrome)
 <li>Clone this repository (you can use gitHub for Desktop) </li>
 <li>Open <strong>brave://extensions/ OR chrome://extensions/</strong></li>
 <li>Enable Developer Mode</li>
-<li>click <strong>Load unpacked extension</strong> button and select the folder with the clone</li>
+<li>Click <strong>Load unpacked extension</strong> button and select the folder with the clone</li>
 <li>Enjoy!</li>
 </ul>
 
