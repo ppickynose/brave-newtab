@@ -7,7 +7,8 @@
     fetchImage();
 
     function fetchImage() {
-        fetch('https://source.unsplash.com/random/1920x1080')
+        //console.log("screen.resolution: " + screen.width + 'x' + screen.height);
+        fetch('https://source.unsplash.com/random/' + screen.width + 'x' + screen.height)
         .then(response => response)
         .then((imageObj) => {
 
@@ -77,7 +78,7 @@ insertinDom();
 
 function insertinDom() {
     document.getElementById('date').innerHTML = `${tab.dateDetails.day}, ${tab.dateDetails.month} ${tab.dateDetails.date}`;
-	document.getElementById('weather').innerHTML = '<br>'; //create space for weather
+    document.getElementById('weather').innerHTML = '<br>'; //create space for weather
 }
 
 function getdateDetails() {
@@ -98,42 +99,41 @@ function getdateDetails() {
 
 }
 
-
 /*
 $.get("https://api.ipify.org?format=jsonp", function (response) {
-    console.log(response); //{ip: "<ip>"}
-    var ip = response.ip;
-    //console.log(ip); //<ip>
-*/
-	//$.get('https://ipapi.co/' + ip + '/latlong/', function (response) {
-    $.get('https://ipapi.co/json', function (response) {
+console.log(response); //{ip: "<ip>"}
+var ip = response.ip;
+//console.log(ip); //<ip>
+ */
+//$.get('https://ipapi.co/' + ip + '/latlong/', function (response) {
+$.get('https://ipapi.co/json', function (response) {
+    //console.log(response);
+    var city = response.city;
+    //console.log(city);
+    //var latlong = response.split(',');
+    //console.log(latlong);
+    //$.get('http://api.openweathermap.org/data/2.5/weather?lat=' + latlong[0] + '&lon=' + latlong[1] + '&appid=7e4dd03efbd4c382e324241cd5ab52ec' + '&units=metric', function (response) {
+    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=7e4dd03efbd4c382e324241cd5ab52ec' + '&units=metric', function (response) {
         //console.log(response);
-		var city = response.city;
-		//console.log(city);
-        //var latlong = response.split(',');
-        //console.log(latlong);
-        //$.get('http://api.openweathermap.org/data/2.5/weather?lat=' + latlong[0] + '&lon=' + latlong[1] + '&appid=7e4dd03efbd4c382e324241cd5ab52ec' + '&units=metric', function (response) {
-        $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=7e4dd03efbd4c382e324241cd5ab52ec' + '&units=metric', function (response) {
-            //console.log(response);
 
-            var feelTemp = Math.round(response.main.feels_like);
-            //console.log("feelTemp: " + feelTemp);
+        var feelTemp = Math.round(response.main.feels_like);
+        //console.log("feelTemp: " + feelTemp);
 
-            var weatherDescription = response.weather[0].description;
-            //console.log(weatherDescription);
+        var weatherDescription = response.weather[0].description;
+        //console.log(weatherDescription);
 
-            var humidity = response.main.humidity;
-            //console.log(humidity);
+        var humidity = response.main.humidity;
+        //console.log(humidity);
 
-            //console.log(feelTemp + "°C, " + weatherDescription + "..");
-            document.getElementById('weather').innerHTML = `${feelTemp}°C, ${weatherDescription}...`;
+        //console.log(feelTemp + "°C, " + weatherDescription + "..");
+        document.getElementById('weather').innerHTML = `${feelTemp}°C, ${weatherDescription}...`;
 
-            //{"coord":{"lon":<lon>,"lat":<lat>},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03n"}],"base":"stations","main":{"temp":292.77,"feels_like":294.58,"temp_min":291.15,"temp_max":294.26,"pressure":1018,"humidity":82},"visibility":10000,"wind":{"speed":0.5,"deg":0},"clouds":{"all":29},"dt":1599531594,"sys":{"type":1,"id":6911,"country":"<country>","sunrise":1599536809,"sunset":1599583197},"timezone":10800,"id":676742,"name":"<name>","cod":200}
-        })
+        //{"coord":{"lon":<lon>,"lat":<lat>},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03n"}],"base":"stations","main":{"temp":292.77,"feels_like":294.58,"temp_min":291.15,"temp_max":294.26,"pressure":1018,"humidity":82},"visibility":10000,"wind":{"speed":0.5,"deg":0},"clouds":{"all":29},"dt":1599531594,"sys":{"type":1,"id":6911,"country":"<country>","sunrise":1599536809,"sunset":1599583197},"timezone":10800,"id":676742,"name":"<name>","cod":200}
     })
-	/*
+})
+/*
 }, "jsonp");
-*/
+ */
 
 /*REF:
 // $. is an alias for jQuery
