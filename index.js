@@ -1,15 +1,15 @@
 "use strict";
 
+let dom = document.getElementById("bgimg");
+
 (function () {
 
-    let dom = document.getElementById("bgimg");
-    dom.style.backgroundColor = 'WhiteSmoke';
-
+    
     //console.log("screen.resolution: " + screen.width + 'x' + screen.height);
     const promisedImage = fetch('https://source.unsplash.com/random/' + screen.width + 'x' + screen.height)
         .then(response => response)
         .then((imageObj) => {
-        console.log('in async');
+        //console.log('in async');
         return imageObj;
     }).catch(() => {
         error();
@@ -35,7 +35,7 @@
     //ALTERNATIVE 3
     (async function load() {
         let photoObj = await promisedImage;
-		console.log("onload");
+		//console.log("onload");
         var photoURL = photoObj.url;
         //console.log("photoURL: " + photoURL);
         dom.style.backgroundImage = 'url(' + photoURL + ')';
