@@ -149,7 +149,7 @@ if (typeof(Storage) !== "undefined") {
             var expiry = now.getTime() + ttl;
             //console.log(quoteExpiry);
             localStorage.setItem("expiry", expiry);
-            $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=7e4dd03efbd4c382e324241cd5ab52ec' + '&units=metric', function (response) {
+            $.get('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=7e4dd03efbd4c382e324241cd5ab52ec' + '&units=metric', function (response) {
                 //console.log(response);
                 var feelTemp = Math.round(response.main.feels_like);
                 //console.log("feelTemp: " + feelTemp);
@@ -247,7 +247,19 @@ https://jquery.com/download/
 //get IP
 https://www.ipify.org/ //use https://api.ipify.org?format=jsonp
 https://stackoverflow.com/questions/2067472/what-is-jsonp-and-why-was-it-created
+/*if used add this snippet in manifest
+,
+    "content_scripts": [{
+            "matches": [
+                "https://api.ipify.org/*"
+            ],
+            "js": ["jquery-3.5.1.min.js"]
+        }
+    ],
+    "content_security_policy": "script-src 'self' https://api.ipify.org; object-src 'self'"
+*/
 
+/*
 //location by ip
 https://ipapi.co/<ip>/latlong/
 https://ipinfo.io/ //not used (requires api key), but gives ip, city, country
