@@ -1,5 +1,5 @@
 <h1>BRAVE-NEWTAB</h1>
-<h2>An awesome new tab page replacement for Brave (and Google Chrome)</h2>
+An awesome new tab page replacement for Chromium based browsers (Brave, Chromium, Google Chrome, Microsoft Edge)
 
 <h3>How to install the extension: </h3>
 <ul>
