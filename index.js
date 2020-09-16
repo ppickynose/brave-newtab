@@ -183,7 +183,7 @@ if (typeof(Storage) !== "undefined") {
         //console.log("Using quote from cached variable in local storage");
         var quote = localStorage.getItem("quote");
         var author = localStorage.getItem("author");
-        document.getElementById('quote').innerHTML = `${quote}... ${author}`;
+        document.getElementById('quote').innerHTML = `${quote}... <br> ${author}`;
     } else { //local storage expired, get updated quote
         const categories = ["inspire", "management", "life", "funny", "love", "art", "students"];
         const random = Math.floor(Math.random() * categories.length);
@@ -202,7 +202,7 @@ if (typeof(Storage) !== "undefined") {
             var expiry = now.getTime() + ttl;
             //console.log(expiry);
             localStorage.setItem("expiry", expiry);
-            document.getElementById('quote').innerHTML = `${quote}... ${author}`;
+            document.getElementById('quote').innerHTML = `${quote}... <br> ${author}`;
         })
         //.done(function () {
         //    alert("second success");
