@@ -99,6 +99,8 @@ function getdateDetails() {
 
 }
 
+//____________________________________________________________________________
+
 /*
 $.get("https://api.ipify.org?format=jsonp", function (response) {
 console.log(response); //{ip: "<ip>"}
@@ -161,4 +163,44 @@ https://ipinfo.io/ //not used (requires api key), but gives ip, city, country
 https://api.openweathermap.org/data/2.5/weather?lat=44&lon=26&appid=<apiId>
 https://home.openweathermap.org/api_keys
 //
-*/
+ */
+
+//____________________________________________________________________________
+
+
+//Quote of the day
+// Code for localStorage
+const now = new Date();
+//console.log("time now: " + now.getTime());
+if (typeof(Storage) !== "undefined") {
+    var quoteExpiry = localStorage.getItem("expiry");
+    //console.log("previous quote expiry time: " + quoteExpiry);
+    //console.log("Web Storage support - OK");
+    if (now.getTime() < quoteExpiry) {
+        // Retrieve value from local storage and assign to variable
+        //localStorage.setItem("quote", "to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be "); //simulate local storage (comment in prod)
+        //console.log("Using quote from cached variable in local storage");
+        var quote = localStorage.getItem("quote");
+        document.getElementById('quote').innerHTML = `${quote}`;
+    } else { //local storage expired, get updated quote
+        const categories = ["inspire", "management", "life", "funny", "love", "art", "students"];
+        const random = Math.floor(Math.random() * categories.length);
+		const randomCategory = categories[random];
+        //console.log(randomCategory);
+        $.get('https://quotes.rest/qod?category='+randomCategory, function (response) {
+            //console.log(response);
+            //console.log("previous quote expired. Requesting new one");
+            var quote = response.contents.quotes[0].quote;
+            // Store value
+            localStorage.setItem("quote", quote);
+            const ttl = 60 * 60 * 1000; // 1hour time to live (in milliseconds)
+			//quotes.rest allows 10 calls per hour in free plan
+            var expiry = now.getTime() + ttl;
+            //console.log(expiry);
+            localStorage.setItem("expiry", expiry);
+            document.getElementById('quote').innerHTML = `${quote}`;
+        })
+    }
+} else {
+    console.error("No Web Storage support");
+}

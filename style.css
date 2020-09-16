@@ -10,6 +10,7 @@ body, html {
     height: 100%;
 }
 
+
 .position {
     width: 100%;
     position: absolute;
@@ -19,6 +20,7 @@ body, html {
     text-align: center;
 	filter: blur(.6px);
 }
+
 
 
 /* fade in animation*/
@@ -75,3 +77,10 @@ body, html {
 	filter: blur(.5px);
 }
 */
+
+
+/*quote of the day */
+div.wrap {
+	word-wrap: break-word;
+	width: 30%;
+}
