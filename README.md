@@ -18,9 +18,10 @@ An awesome new tab page replacement for Chromium based browsers (Brave, Chromium
 
 <h3>Features: </h3>
 <ul>
-<li>Dynamically change background image</li>
-<li>Weather</li>
-<li>Dynamically show quote from 7 categories: inspirational, management, life, funny, love, art, students</li>
+<li>Dynamic high-resolution background image powered by creators around the world </li>
+<li>Periodic quotes from 7 categories: inspirational, management, life, funny, love, art, studentship</li>
+<li>Live weather updates</li>
+
 </ul>
 
 ![Alt text](https://i.imgur.com/8wJFJXS.png "ScreenShot 1")
