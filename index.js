@@ -128,7 +128,7 @@ $.get('https://ipapi.co/json', function (response) {
         //console.log(humidity);
 
         //console.log(feelTemp + "°C, " + weatherDescription + "..");
-        document.getElementById('weather').innerHTML = `${feelTemp}°C, ${weatherDescription}...`;
+        document.getElementById('weather').innerHTML = `${feelTemp}°C, ${weatherDescription}`;
 
         //{"coord":{"lon":<lon>,"lat":<lat>},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03n"}],"base":"stations","main":{"temp":292.77,"feels_like":294.58,"temp_min":291.15,"temp_max":294.26,"pressure":1018,"humidity":82},"visibility":10000,"wind":{"speed":0.5,"deg":0},"clouds":{"all":29},"dt":1599531594,"sys":{"type":1,"id":6911,"country":"<country>","sunrise":1599536809,"sunset":1599583197},"timezone":10800,"id":676742,"name":"<name>","cod":200}
     })
@@ -178,28 +178,45 @@ if (typeof(Storage) !== "undefined") {
     //console.log("Web Storage support - OK");
     if (now.getTime() < quoteExpiry) {
         // Retrieve value from local storage and assign to variable
-        //localStorage.setItem("quote", "to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be "); //simulate local storage (comment in prod)
+        //localStorage.setItem("quote", "to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be to be or not to be "); //simulate local storage (to be commented in prod)
+        //localStorage.setItem("author", "Fusion"); //simulate local storage (to be commented in prod)
         //console.log("Using quote from cached variable in local storage");
         var quote = localStorage.getItem("quote");
-        document.getElementById('quote').innerHTML = `${quote}`;
+        var author = localStorage.getItem("author");
+        document.getElementById('quote').innerHTML = `${quote}... ${author}`;
     } else { //local storage expired, get updated quote
         const categories = ["inspire", "management", "life", "funny", "love", "art", "students"];
         const random = Math.floor(Math.random() * categories.length);
-		const randomCategory = categories[random];
+        const randomCategory = categories[random];
         //console.log(randomCategory);
-        $.get('https://quotes.rest/qod?category='+randomCategory, function (response) {
+        $.get('https://quotes.rest/qod?category=' + randomCategory, function (response) {
             //console.log(response);
             //console.log("previous quote expired. Requesting new one");
             var quote = response.contents.quotes[0].quote;
+            var author = response.contents.quotes[0].author;
             // Store value
             localStorage.setItem("quote", quote);
+            localStorage.setItem("author", author);
             const ttl = 60 * 60 * 1000; // 1hour time to live (in milliseconds)
-			//quotes.rest allows 10 calls per hour in free plan
+            //quotes.rest allows 10 calls per hour in free plan
             var expiry = now.getTime() + ttl;
             //console.log(expiry);
             localStorage.setItem("expiry", expiry);
-            document.getElementById('quote').innerHTML = `${quote}`;
+            document.getElementById('quote').innerHTML = `${quote}... ${author}`;
         })
+        //.done(function () {
+        //    alert("second success");
+        //})
+        .fail(function () {
+            const quote = "Understand the past, question the present, prepare for the future";
+            const author = "Fusionneur";
+            document.getElementById('quote').innerHTML = `${quote}... <br> ${author}`;
+        })
+        //.always(function () {
+        //    alert("finished");
+        //});
+
+        //REF: https://api.jquery.com/jQuery.get/
     }
 } else {
     console.error("No Web Storage support");
