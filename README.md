@@ -16,6 +16,13 @@ An awesome new tab page replacement for Brave (and Google Chrome)
 <li>Pull changes (git pull)</li>
 </ul>
 
+<h3>Features: </h3>
+<ul>
+<li>Dynamically change background image</li>
+<li>Weather now</li>
+<li>Dynamically show quote from 7 categories: inspirational, management, life, funny, love, art, students</li>
+</ul>
+
 
 ![Alt text](https://i.imgur.com/1RPIho0.jpg "ScreenShot 1")
 ![Alt text](https://i.imgur.com/g5RSxzm.jpg "ScreenShot 2")
