@@ -23,12 +23,12 @@ An awesome new tab page replacement for Brave (and Google Chrome)
 <li>Dynamically show quote from 7 categories: inspirational, management, life, funny, love, art, students</li>
 </ul>
 
-
-![Alt text](https://i.imgur.com/1RPIho0.jpg "ScreenShot 1")
-![Alt text](https://i.imgur.com/g5RSxzm.jpg "ScreenShot 2")
-![Alt text](https://i.imgur.com/hVpbswI.jpg "ScreenShot 3")
-![Alt text](https://i.imgur.com/uVjW8eT.png "ScreenShot 4")
-![Alt text](https://i.imgur.com/VmbsOae.png "ScreenShot 5")
+![Alt text](https://i.imgur.com/8wJFJXS.png "ScreenShot 1")
+![Alt text](https://i.imgur.com/1RPIho0.jpg "ScreenShot 2")
+![Alt text](https://i.imgur.com/g5RSxzm.jpg "ScreenShot 3")
+![Alt text](https://i.imgur.com/hVpbswI.jpg "ScreenShot 4")
+![Alt text](https://i.imgur.com/uVjW8eT.png "ScreenShot 5")
+![Alt text](https://i.imgur.com/VmbsOae.png "ScreenShot 6")
 
 
 <h3>#Feel free to Contribute<h3>
