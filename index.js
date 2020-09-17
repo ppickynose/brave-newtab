@@ -3,10 +3,15 @@
 let dom = document.getElementById("bgimg");
 
 (function () {
-
-    
+    const photoTypes = ["random", "featured"]
+    const categories = ["inspire", "management", "life", "funny", "love", "art", "party", "summer", "technology", "business", "nature", "dream", "space", "universe", "inspirational", "motivational", "photography", "animals", "alapacas"];
+    //const categories = ["winter", "autumn" ]; //extra categories
+    const randomTypeNumber = Math.floor(Math.random() * photoTypes.length);
+    const randomCategoryNumber = Math.floor(Math.random() * categories.length);
+    const randomType = photoTypes[randomTypeNumber];
+    const randomCategory = categories[randomCategoryNumber];
     //console.log("screen.resolution: " + screen.width + 'x' + screen.height);
-    const promisedImage = fetch('https://source.unsplash.com/random/' + screen.width + 'x' + screen.height)
+    const promisedImage = fetch('https://source.unsplash.com/' + randomType + '/' + screen.width + 'x' + screen.height + '?' + randomCategory) //include specific search keywords
         .then(response => response)
         .then((imageObj) => {
         //console.log('in async');
@@ -31,11 +36,10 @@ let dom = document.getElementById("bgimg");
     image.src = photoURL;
      */
 
-
-    //ALTERNATIVE 3
+    //ALTERNATIVE 2
     (async function load() {
         let photoObj = await promisedImage;
-		//console.log("onload");
+        //console.log("onload");
         var photoURL = photoObj.url;
         //console.log("photoURL: " + photoURL);
         dom.style.backgroundImage = 'url(' + photoURL + ')';
@@ -175,6 +179,7 @@ if (typeof(Storage) !== "undefined") {
 
     //____________________________________________________________________________
 
+    /**/
 
     //Quote of the day
 
@@ -223,6 +228,7 @@ if (typeof(Storage) !== "undefined") {
 
 
     }
+
 } else {
     console.error("No Web Storage support");
 }
@@ -249,15 +255,15 @@ https://www.ipify.org/ //use https://api.ipify.org?format=jsonp
 https://stackoverflow.com/questions/2067472/what-is-jsonp-and-why-was-it-created
 /*if used add this snippet in manifest
 ,
-    "content_scripts": [{
-            "matches": [
-                "https://api.ipify.org/*"
-            ],
-            "js": ["jquery-3.5.1.min.js"]
-        }
-    ],
-    "content_security_policy": "script-src 'self' https://api.ipify.org; object-src 'self'"
-*/
+"content_scripts": [{
+"matches": [
+"https://api.ipify.org/*"
+],
+"js": ["jquery-3.5.1.min.js"]
+}
+],
+"content_security_policy": "script-src 'self' https://api.ipify.org; object-src 'self'"
+ */
 
 /*
 //location by ip
@@ -273,4 +279,8 @@ https://home.openweathermap.org/api_keys
 //https://quotes.rest/
 
 //https://api.jquery.com/jQuery.get/
+
+
+//image
+https://source.unsplash.com/
 */
