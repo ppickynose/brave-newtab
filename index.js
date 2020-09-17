@@ -3,12 +3,13 @@
 let dom = document.getElementById("bgimg");
 
 (function () {
-    const photoTypes = ["random", "featured"]
+    //const photoTypes = ["featured", "featured"]
     const categories = ["inspire", "management", "life", "funny", "love", "art", "party", "summer", "technology", "business", "nature", "dream", "space", "universe", "inspirational", "motivational", "photography", "animals", "alapacas"];
-    //const categories = ["winter", "autumn" ]; //extra categories
-    const randomTypeNumber = Math.floor(Math.random() * photoTypes.length);
+    //const categories = ["winter", "autumn", "snow" ]; //extra categories
+    //const randomTypeNumber = Math.floor(Math.random() * photoTypes.length);
+    //const randomType = photoTypes[randomTypeNumber]; //featured photos are more cool than random ones
+    const randomType = "featured";
     const randomCategoryNumber = Math.floor(Math.random() * categories.length);
-    const randomType = photoTypes[randomTypeNumber];
     const randomCategory = categories[randomCategoryNumber];
     //console.log("screen.resolution: " + screen.width + 'x' + screen.height);
     const promisedImage = fetch('https://source.unsplash.com/' + randomType + '/' + screen.width + 'x' + screen.height + '?' + randomCategory) //include specific search keywords
